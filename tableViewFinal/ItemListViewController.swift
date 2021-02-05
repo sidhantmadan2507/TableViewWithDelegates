@@ -10,16 +10,16 @@ import UIKit
 protocol TasksDelegate {
     func didChange(name: String)
 }
-
 class ItemListViewController: UIViewController,UITextFieldDelegate {
-
+    
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var dataTextField: UITextField!
     var tasksTelegate: TasksDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addButton.layer.cornerRadius = addButton.frame.size.height/2
         dataTextField.delegate = self
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func submitButton(_ sender: Any) {
@@ -27,5 +27,4 @@ class ItemListViewController: UIViewController,UITextFieldDelegate {
         tasksTelegate.didChange(name: currName)
         dismiss(animated: true, completion: nil)
     }
-    
 }

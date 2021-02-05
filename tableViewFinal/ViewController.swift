@@ -9,15 +9,18 @@ import UIKit
 
 final class ViewController: UIViewController {
     
+    @IBOutlet weak var propButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
     var arr = [(String)]()
     var selectedIndex: IndexPath!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let nib = UINib(nibName: "CustomTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "CustomTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
+        propButton.layer.cornerRadius = propButton.frame.size.height/2
     }
     
     @IBAction func addButton(_ sender: Any) {
@@ -46,14 +49,16 @@ extension ViewController: ModifyDelegate {
         tableView.reloadData()
     }
 }
+
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        selectedIndex = indexPath
         let modifyVc = storyboard?.instantiateViewController(identifier: "ItemAddViewController") as! ItemAddViewController
         modifyVc.modifyDelegate = self
+        modifyVc.addImageDelegate = self
         modifyVc.set(item: arr[indexPath.row])
         present(modifyVc, animated: true, completion: nil)
-        selectedIndex = indexPath
     }
 }
 extension ViewController: UITableViewDataSource {
@@ -61,8 +66,16 @@ extension ViewController: UITableViewDataSource {
         return arr.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = arr[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
+//        cell.cellImage.backgroundColor = .cyan
+        cell.cellName.text = arr[indexPath.row]
         return cell
+    }
+}
+
+extension ViewController: AddImageDelegate {
+    func add(photo: UIImage) {
+        let cell = tableView.cellForRow(at: selectedIndex) as? CustomTableViewCell
+        cell?.cellImage.image = photo
     }
 }

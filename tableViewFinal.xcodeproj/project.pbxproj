@@ -15,6 +15,8 @@
 		42CB65F425B7305700AF6F96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42CB65F225B7305700AF6F96 /* LaunchScreen.storyboard */; };
 		42CB65FD25B7314E00AF6F96 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CB65FC25B7314E00AF6F96 /* ItemListViewController.swift */; };
 		42CB660025B759E000AF6F96 /* ItemAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CB65FF25B759E000AF6F96 /* ItemAddViewController.swift */; };
+		42CB660425BB024B00AF6F96 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CB660225BB024B00AF6F96 /* CustomTableViewCell.swift */; };
+		42CB660525BB024B00AF6F96 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42CB660325BB024B00AF6F96 /* CustomTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		42CB65F525B7305700AF6F96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42CB65FC25B7314E00AF6F96 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		42CB65FF25B759E000AF6F96 /* ItemAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAddViewController.swift; sourceTree = "<group>"; };
+		42CB660225BB024B00AF6F96 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		42CB660325BB024B00AF6F96 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				42CB65E725B7305600AF6F96 /* AppDelegate.swift */,
 				42CB65E925B7305600AF6F96 /* SceneDelegate.swift */,
 				42CB65EB25B7305600AF6F96 /* ViewController.swift */,
+				42CB660225BB024B00AF6F96 /* CustomTableViewCell.swift */,
+				42CB660325BB024B00AF6F96 /* CustomTableViewCell.xib */,
 				42CB65ED25B7305600AF6F96 /* Main.storyboard */,
 				42CB65F025B7305700AF6F96 /* Assets.xcassets */,
 				42CB65F225B7305700AF6F96 /* LaunchScreen.storyboard */,
@@ -132,6 +138,7 @@
 			files = (
 				42CB65F425B7305700AF6F96 /* LaunchScreen.storyboard in Resources */,
 				42CB65F125B7305700AF6F96 /* Assets.xcassets in Resources */,
+				42CB660525BB024B00AF6F96 /* CustomTableViewCell.xib in Resources */,
 				42CB65EF25B7305600AF6F96 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42CB660425BB024B00AF6F96 /* CustomTableViewCell.swift in Sources */,
 				42CB65EC25B7305600AF6F96 /* ViewController.swift in Sources */,
 				42CB660025B759E000AF6F96 /* ItemAddViewController.swift in Sources */,
 				42CB65FD25B7314E00AF6F96 /* ItemListViewController.swift in Sources */,
